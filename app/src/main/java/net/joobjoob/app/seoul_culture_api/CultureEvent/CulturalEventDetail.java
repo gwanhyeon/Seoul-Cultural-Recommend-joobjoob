@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
+import net.joobjoob.app.seoul_culture_api.R;
 import net.joobjoob.app.seoul_culture_api.R.id;
 import net.joobjoob.app.seoul_culture_api.R.layout;
 
@@ -68,7 +69,7 @@ public class CulturalEventDetail extends BaseActivity {
         Glide.with(this).load(url).into(this.mainImg);
 
         // change : error -> "//"
-        // Glide.with(this).load(url).error(drawable.bg_bigimg).into(this.mainImg);
+//         Glide.with(this).load(url).error(R.drawable.bg_bigimg).into(this.mainImg);
         this.culturalTitle.setText(this.culturalInfo.getTITLE());
         this.culturalCodeName.setText(this.culturalInfo.getCODENAME());
         this.culturalDate.setText(this.culturalInfo.getSTRTDATE() + " ~ " + this.culturalInfo.getEND_DATE());
