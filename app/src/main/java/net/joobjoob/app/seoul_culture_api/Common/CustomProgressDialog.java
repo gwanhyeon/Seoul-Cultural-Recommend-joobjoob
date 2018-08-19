@@ -11,7 +11,7 @@ import net.joobjoob.app.seoul_culture_api.R;
  */
 
 
-//comment porgress bar -> Recyclerview Loading
+//comment : porgress bar -> Recyclerview Loading
 public class CustomProgressDialog extends Dialog {
     private boolean isDismissed;
     public static CustomProgressDialog show(Context context, CharSequence title, CharSequence message) {
