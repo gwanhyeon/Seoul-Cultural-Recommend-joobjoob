@@ -6,8 +6,10 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.util.Base64;
 import android.util.Log;
+import android.view.MenuItem;
 
 
 import com.kakao.auth.ISessionCallback;
@@ -29,7 +31,9 @@ public class KaKaoLoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_login);
+        //setContentView(R.layout.activity_login);
+        //setContentView(R.layout.activity_main_view);
+        setContentView(R.layout.activity_keyword);
 
         getHashKey();
 
@@ -61,7 +65,7 @@ public class KaKaoLoginActivity extends Activity {
 
         @Override
         public void onSessionOpenFailed(KakaoException exception) {
-            if(exception != null) {
+            if (exception != null) {
                 Logger.e(exception);
             }
             setContentView(R.layout.activity_login); // 세션 연결이 실패했을때
@@ -75,13 +79,13 @@ public class KaKaoLoginActivity extends Activity {
         finish();
     }
 
-    private void getHashKey(){
+    private void getHashKey() {
         try {                                                        // 패키지이름을 입력해줍니다.
             PackageInfo info = getPackageManager().getPackageInfo("net.joobjoob.app.seoul_culture_api", PackageManager.GET_SIGNATURES);
             for (Signature signature : info.signatures) {
                 MessageDigest md = MessageDigest.getInstance("SHA");
                 md.update(signature.toByteArray());
-                Log.e(TAG,"key_hash="+ Base64.encodeToString(md.digest(), Base64.DEFAULT));
+                Log.e(TAG, "key_hash=" + Base64.encodeToString(md.digest(), Base64.DEFAULT));
             }
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();

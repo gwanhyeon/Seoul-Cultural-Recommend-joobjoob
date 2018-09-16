@@ -3,4 +3,9 @@
     <color name="colorPrimaryDark" />
     <color name="colorPrimary" />
     <color name="colorAccent" />
+    <color name="pressed">#3b92ff</color>
+    <color name="unpressed">#ffffff</color>
+    <color name="backGround">#ecf0f5</color>
+    <color name="nav_checked">#3b92ff</color>
+    <color name="nav_unchecked">#000000</color>
 </resources>
