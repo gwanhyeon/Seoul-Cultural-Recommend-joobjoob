@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/backColor">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,7 +13,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="62dp"
-            android:background="#3a4659"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingLeft="12dp"
@@ -24,8 +25,7 @@
                 android:clickable="true"
                 android:gravity="center_vertical"
                 android:onClick="showCategory"
-                android:orientation="horizontal"
-                android:paddingRight="23dp">
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/category"
@@ -34,49 +34,58 @@
                     android:includeFontPadding="false"
                     android:text="명칭"
                     android:textColor="#ffffff"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+                <!--
+                                <ImageView
+                                    android:id="@+id/category_selector"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="27dp"
+                                    android:padding="2dp"
+                                    android:src="@drawable/selector_btn_category" />
 
-                <ImageView
-                    android:id="@+id/category_selector"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="27dp"
-                    android:padding="2dp"
-                    android:src="@drawable/selector_btn_category" />
+                                !-->
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/layout_category_0"
                 android:layout_width="0dp"
-                android:layout_height="38dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="15dp"
                 android:layout_weight="1"
-                android:background="@drawable/input_text_background"
+                android:background="@color/white"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/search_concert_name"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
-                    android:hint="Search..."
+                    android:hint="제목 또는 키워드를 입력하세요"
                     android:includeFontPadding="false"
                     android:paddingLeft="5dp"
                     android:singleLine="true"
-                    android:textColor="#ffffff"
+                    android:textColor="@color/black"
                     android:textColorHint="#696f78"
                     android:textCursorDrawable="@null"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
-                <ImageButton
+                <TextView
+                    android:id="@+id/searchname"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginRight="10dp"
+                    android:layout_marginTop="3.5dp"
                     android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"
                     android:onClick="searchName"
                     android:padding="7dp"
-                    android:src="@drawable/icon_search" />
+                    android:text="검색"
+                    android:textColor="#5ebafa"
+                    android:textSize="16sp" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -99,7 +108,8 @@
                     android:onClick="showDatePickerDialog"
                     android:paddingLeft="5dp"
                     android:textColor="#ffffff"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:visibility="gone" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -108,7 +118,8 @@
                     android:gravity="center"
                     android:text="~"
                     android:textColor="#ffffff"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/end_date"
@@ -123,7 +134,8 @@
                     android:onClick="showDatePickerDialog"
                     android:paddingLeft="5dp"
                     android:textColor="#ffffff"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:visibility="gone" />
 
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -134,7 +146,8 @@
                     android:background="@android:color/transparent"
                     android:onClick="searchPeriod"
                     android:padding="7dp"
-                    android:src="@drawable/icon_search" />
+                    android:src="@drawable/icon_search"
+                    android:visibility="gone" />
             </LinearLayout>
 
             <LinearLayout
@@ -158,7 +171,8 @@
                     android:includeFontPadding="false"
                     android:text="장르를 선택해 주세요."
                     android:textColor="#ffffff"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:visibility="gone" />
 
                 <ImageView
                     android:id="@+id/category_subcode_selector"
@@ -166,28 +180,20 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="27dp"
                     android:padding="2dp"
-                    android:src="@drawable/selector_btn_category" />
+                    android:src="@drawable/selector_btn_category"
+                    android:visibility="gone" />
             </LinearLayout>
+
         </LinearLayout>
 
-        <ListView
+        <android.support.v7.widget.RecyclerView
             android:id="@+id/cultural_listview"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#dce0e6"
+            android:background="@color/backColor"
             android:divider="@null" />
+
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/btn_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="25dp"
-        android:layout_marginRight="12dp"
-        android:background="@android:color/transparent"
-        android:onClick="goTop"
-        android:src="@drawable/btn_top" />
 </RelativeLayout>

@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="62dp"
-        android:background="#3a4659"
+        android:background="@color/pressed"
         android:gravity="center"
         android:text="문화 행사 상세"
         android:textColor="#ffffff"
@@ -27,8 +27,10 @@
             <ImageView
                 android:id="@+id/main_img"
                 android:layout_width="match_parent"
-                android:layout_height="165dp"
+                android:layout_height="288dp"
+                android:layout_marginTop="17dp"
                 android:adjustViewBounds="true"
+                android:gravity="center"
                 android:scaleType="fitCenter"
                 android:src="@drawable/bg_bigimg" />
 
@@ -37,7 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="17dp"
-                android:gravity="center_vertical"
+                android:gravity="center"
                 android:includeFontPadding="false"
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp"
@@ -212,30 +214,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text="주최"
-                        android:textColor="#567ebb"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/cultural_sponsor"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="7"
-                        android:text=""
-                        android:textColor="#565656"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="17dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
                         android:layout_weight="3"
                         android:text="문의"
                         android:textColor="#567ebb"
@@ -258,7 +237,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="51dp"
-        android:background="#3a4659"
+        android:background="@color/pressed"
         android:clickable="true"
         android:gravity="center"
         android:onClick="showDetailBRS"

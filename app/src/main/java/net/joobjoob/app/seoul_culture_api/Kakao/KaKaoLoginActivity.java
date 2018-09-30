@@ -6,17 +6,20 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.util.Base64;
 import android.util.Log;
-import android.view.MenuItem;
-
+import android.view.View;
+import android.widget.Button;
 
 import com.kakao.auth.ISessionCallback;
 import com.kakao.auth.Session;
+import com.kakao.usermgmt.UserManagement;
+import com.kakao.usermgmt.callback.LogoutResponseCallback;
 import com.kakao.util.exception.KakaoException;
 import com.kakao.util.helper.log.Logger;
 
+import net.joobjoob.app.seoul_culture_api.Common.KeywordActivity;
+import net.joobjoob.app.seoul_culture_api.CultureEvent.CulturalEventSearch;
 import net.joobjoob.app.seoul_culture_api.R;
 
 import java.security.MessageDigest;
@@ -24,22 +27,28 @@ import java.security.NoSuchAlgorithmException;
 
 public class KaKaoLoginActivity extends Activity {
 
-    private SessionCallback callback;      //콜백 선언
+    private SessionCallback callback; // 콜백 선언
     private static final String TAG = "KaKaoLoginActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main_view);
 
-        //setContentView(R.layout.activity_login);
-        //setContentView(R.layout.activity_main_view);
-        setContentView(R.layout.activity_keyword);
+        Button start_1 = findViewById(R.id.start_button);
+
+        start_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), KeywordActivity.class));
+                finish();
+            }
+        });
 
         getHashKey();
 
         callback = new SessionCallback();                  // 이 두개의 함수 중요함
         Session.getCurrentSession().addCallback(callback);
-
     }
 
     @Override

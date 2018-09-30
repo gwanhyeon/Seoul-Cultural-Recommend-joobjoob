@@ -4,6 +4,6 @@
     <solid android:color="@android:color/transparent" />
     <stroke
         android:width="2px"
-        android:color="#ee7e1a" />
+        android:color="@color/d_day_text_color" />
 
 </shape>

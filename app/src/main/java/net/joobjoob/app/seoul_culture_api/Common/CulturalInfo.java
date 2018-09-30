@@ -37,31 +37,55 @@ public class CulturalInfo implements Serializable {
     private String CONTENTS;
     private String GCODE;
 
+    public CulturalInfo(String cultcode, String subjcode, String codename, String title, String strtdate, String end_date, String time, String place, String org_link, String main_img, String homepage, String use_trgt, String use_fee, String sponsor, String inquiry, String support, String etc_desc, String agelimit, String is_free, String gcode) {
+        this.CULTCODE = cultcode;
+        this.SUBJCODE = subjcode;
+        this.CODENAME = codename;
+        this.TITLE = title;
+        this.TIME = time;
+        this.END_DATE = end_date;
+        this.PLACE = place;
+        this.STRTDATE = strtdate;
+        this.ORG_LINK = org_link;
+        this.MAIN_IMG = main_img;
+        this.HOMEPAGE = homepage;
+        this.USE_TRGT = use_trgt;
+        this.IS_FREE = is_free;
+        this.USE_FEE = use_fee;
+        this.SPONSOR = sponsor;
+        this.INQUIRY = inquiry;
+        this.SUPPORT = support;
+        this.ETC_DESC = etc_desc;
+        this.AGELIMIT = agelimit;
+        this.GCODE = gcode;
+    }
+
+//,this.TICKET = TICKET ,this.PROGRAM = PROGRAM , this.PLAYER = PLAYER ,this.CONTENTS = CONTENTS;;
     public CulturalInfo(String CULTCODE, String SUBJCODE, String CODENAME, String TITLE, String STRTDATE, String END_DATE, String TIME, String PLACE, String ORG_LINK, String MAIN_IMG, String HOMEPAGE, String USE_TRGT, String USE_FEE, String SPONSOR, String INQUIRY, String SUPPORT, String ETC_DESC, String AGELIMIT, String IS_FREE, String TICKET, String PROGRAM, String PLAYER, String CONTENTS, String GCODE) {
-        this.CULTCODE = CULTCODE;
-        this.SUBJCODE = SUBJCODE;
-        this.CODENAME = CODENAME;
-        this.TITLE = TITLE;
+        this.CULTCODE = CULTCODE;//
+        this.SUBJCODE = SUBJCODE;//
+        this.CODENAME = CODENAME;//
+        this.TITLE = TITLE;//
         this.STRTDATE = STRTDATE;
-        this.END_DATE = END_DATE;
-        this.TIME = TIME;
-        this.PLACE = PLACE;
-        this.ORG_LINK = ORG_LINK;
-        this.MAIN_IMG = MAIN_IMG;
-        this.HOMEPAGE = HOMEPAGE;
-        this.USE_TRGT = USE_TRGT;
-        this.USE_FEE = USE_FEE;
-        this.SPONSOR = SPONSOR;
-        this.INQUIRY = INQUIRY;
-        this.SUPPORT = SUPPORT;
-        this.ETC_DESC = ETC_DESC;
-        this.AGELIMIT = AGELIMIT;
-        this.IS_FREE = IS_FREE;
+        this.END_DATE = END_DATE;//
+        this.TIME = TIME;//
+        this.PLACE = PLACE;//
+        this.ORG_LINK = ORG_LINK;///
+        this.MAIN_IMG = MAIN_IMG;//
+        this.HOMEPAGE = HOMEPAGE;//
+        this.USE_TRGT = USE_TRGT;//
+        this.USE_FEE = USE_FEE;//
+        this.SPONSOR = SPONSOR;//
+        this.INQUIRY = INQUIRY;//
+        this.SUPPORT = SUPPORT;//
+        this.ETC_DESC = ETC_DESC;//
+        this.AGELIMIT = AGELIMIT;//
+        this.IS_FREE = IS_FREE;//
         this.TICKET = TICKET;
         this.PROGRAM = PROGRAM;
         this.PLAYER = PLAYER;
         this.CONTENTS = CONTENTS;
-        this.GCODE = GCODE;
+        this.GCODE = GCODE;//
     }
 
     public String getCULTCODE() {
